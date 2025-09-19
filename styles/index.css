@@ -24,3 +24,64 @@
     --color-purple-200: var(--purple-200);
     --font-family: 'Public Sans', sans-serif;
 }
+
+html, body {
+  font-family: var(--font-family); 
+}
+
+
+/* ###################################################Typography Start*/
+.heading_xl{
+  @apply text-[2rem] leading-[120%] font-bold;
+}
+.heading_lg{
+  @apply text-[1.25rem] leading-[120%] font-bold;
+}
+.heading_md{
+  @apply text-[1rem] leading-[150%] font-bold;
+}
+.text_sm{
+  @apply text-[0.875rem] leading-[150%] font-regular;
+}
+
+.text_sm--bold{
+  @apply font-bold;
+}
+
+.text_xs{
+  @apply text-[0.75rem] leading-[150%] font-normal;
+}
+.text_xs--bold{
+  @apply font-bold;
+}
+
+
+/* ###################################################Typography End*/
+
+
+/* #################################################### Spacing Start */
+.gap_40{
+  @apply gap-[2.5rem];
+}
+.gap_32{
+  @apply gap-[2rem];
+}
+.gap_24{
+  @apply gap-[1.5rem];
+}
+.gap_20{
+  @apply gap-[1.25rem];
+}
+.gap_16{
+  @apply gap-[1rem];
+}
+.gap_12{
+  @apply gap-[0.75rem];
+}
+.gap_8{
+  @apply gap-[0.5rem];
+}
+.gap_4{
+  @apply gap-[0.25rem];
+}      
+/* #################################################### Spacing End */
