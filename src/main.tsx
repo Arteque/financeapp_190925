@@ -6,12 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import "../styles/index.css"
 
 import Root from './templates/Root'
-import Overview from './pages/dashboard/Overview'
 import Transactions from './pages/dashboard/Transactions'
 import Budgets from './pages/dashboard/Budgets'
 import Pots from './pages/dashboard/Pots'
 import RecurringBills from './pages/dashboard/RecurringBills'
-import Login from './pages/login/Login'
+import Index from './pages/dashboard/Index'
 
 
 const router = createBrowserRouter([
@@ -21,8 +20,8 @@ const router = createBrowserRouter([
     errorElement:<h1>Oops! Something went wrong.</h1>,
     children: [
       {
-        path:"/overview",
-        element:<Overview />
+        path:"/",
+        element:<Index />
       },
       {
         path:"/transactions",
@@ -40,10 +39,6 @@ const router = createBrowserRouter([
         path:"/recurring-bills",
         element:<RecurringBills />
       },
-      {
-        path:"/login",
-        element:<Login />
-      }
     ]
   }
 ])

@@ -4,7 +4,7 @@ const Root = () => {
     return (
         <>
         <header>Header</header>
-        <main><Outlet /></main>
+          <main><Outlet /></main>
         <footer>Footer</footer>
         </>
     )
