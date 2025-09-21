@@ -41,5 +41,6 @@ $colors: (
       --#{$color}-#{$shade}: #{$value};
     }
   }
+  --transition-duration: 300ms;
   --font: "Public Sans", sans-serif;
 }

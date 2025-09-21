@@ -6,6 +6,7 @@
   --color-grey-200: var(--grey-200);
   --color-grey-300: var(--grey-300);
   --color-grey-400: var(--grey-400);
+  --color-grey-500: var(--grey-500);
   --color-beige-100: var(--beige-100);
   --color-beige-200: var(--beige-200);
   --color-green-100: var(--green-100);
@@ -21,14 +22,22 @@
   --color-red-200: var(--red-200);
   --color-purple-100: var(--purple-100);
   --color-purple-200: var(--purple-200);
-  --font-family: var(--font);
+  --font-sans: var(--font);
 }
 
 html,
 body {
-  font-family: var(--font-family);
+  font-family: var(--font);
 }
 
+button {
+  cursor: pointer;
+}
+@media (prefers-reduced-motion = reduced) {
+  :root {
+    --duration: 0;
+  }
+}
 /* ###################################################Typography Start*/
 .heading_xl {
   @apply text-[2rem] leading-[120%] font-bold;

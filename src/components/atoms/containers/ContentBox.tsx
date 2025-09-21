@@ -1,4 +1,4 @@
-import type { divProps } from "../../types/divType";
+import type { divProps } from "../../../types/divType";
 
 const ContentBox = ({ className, children, ...props }: divProps) => {
   return (
