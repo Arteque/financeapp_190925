@@ -1,8 +1,7 @@
-interface LinkProps extends React.HTMLProps<HTMLAnchorElement>{
-  href : string;
+interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
+  href: string;
   className?: string;
-  children: React.ReactNode || string;
+  children: React.ReactNode | string;
 }
 
-
-export {LinkProps}
+export { LinkProps };
