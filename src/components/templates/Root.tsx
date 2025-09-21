@@ -1,12 +1,9 @@
 import { Outlet } from "react-router-dom";
-import Button from "../atoms/Buttons/Button";
+import Header from "../organisms/Header";
 const Root = () => {
   return (
     <>
-      <header>Header</header>
-      <Button variant="fullorangered">Test Button</Button>
-      <Button variant="fulldark">Test Button</Button>
-      <Button variant="fullbeige">Test Button</Button>
+      <Header loged />
       <main>
         <Outlet />
       </main>
