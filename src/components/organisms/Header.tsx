@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Link from "../atoms/links/Link";
 
 type HeaderProps = {
@@ -42,19 +43,30 @@ const navItems = [
   },
 ];
 
+const CURRENT = {
+  filters: "invert-[39%] sepia-[98%] saturate-[749%] hue-rotate-[169deg] brightness-[91%] contrast-[87%]",
+  filter: "[&_img]:invert-[38%] [&_img]:sepia-[69%] [&_img]:saturate-[376%] [&_img]:hue-rotate-[128deg] [&_img]:brightness-[93%] [&_img]:contrast-[93%]",
+}
+
 const Header = ({ loged }: HeaderProps) => {
+
+
+
+
   return loged ? (
     <header className="bg-grey-500 text-grey-100 fixed bottom-0 left-0 right-0">
       <nav role="navigation" aria-label="Main Navigation">
         <Link className="hidden mx-auto w-fit" href="/" role="logo">
           <img src="/images/logo-large.svg" alt="Finance" />
         </Link>
-        <ul className="flex justify-between items-center">
+        <ul className="flex justify-between">
           {navItems.map((item) => (
-            <li key={item.id} className="flex-1 p-3">
-              <Link
-                className="flex flex-col items-center gap-[0.5rem] py-[0.5rem] px-[0.75rem] hover:bg-grey-400 rounded-lg"
-                href={item.href}
+            <li key={item.id}>
+              <NavLink
+                className={({ isActive }: { isActive: boolean }) =>
+                  `block h-full  p-4 hover:bg-grey-400 ${isActive ? "bg-grey-100 "+CURRENT.filter : ''}`
+                }
+                to={item.href}
               >
                 <span className="icon">
                   <img
@@ -64,7 +76,7 @@ const Header = ({ loged }: HeaderProps) => {
                   />
                 </span>
                 <span className="text_sm hidden">{item.text}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
