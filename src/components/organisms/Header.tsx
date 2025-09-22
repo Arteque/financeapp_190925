@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import Link from "../atoms/links/Link";
 import NavList from "./NavList";
 
@@ -16,7 +15,7 @@ const CURRENT = {
 const Header = ({ loged }: HeaderProps) => {
   return loged ? (
     <header className="bg-grey-500 text-grey-100 fixed bottom-0 left-0 right-0">
-      <NavList />
+      <NavList className={CURRENT.filter} />
     </header>
   ) : (
     <header className="bg-grey-500 text-grey-100 py-[1.5rem] px-[2.5rem]">
