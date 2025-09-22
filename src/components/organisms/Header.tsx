@@ -45,7 +45,7 @@ const navItems = [
 
 const CURRENT = {
   filters: "invert-[39%] sepia-[98%] saturate-[749%] hue-rotate-[169deg] brightness-[91%] contrast-[87%]",
-  filter: "[&_img]:invert-[38%] [&_img]:sepia-[69%] [&_img]:saturate-[376%] [&_img]:hue-rotate-[128deg] [&_img]:brightness-[93%] [&_img]:contrast-[93%]",
+  filter: "[&_img]:invert-[.3] [&_img]:sepia-[.5] [&_img]:saturate-[100%] [&_img]:hue-rotate-[128deg] [&_img]:brightness-[93%] [&_img]:contrast-[93%]",
 }
 
 const Header = ({ loged }: HeaderProps) => {
@@ -59,12 +59,12 @@ const Header = ({ loged }: HeaderProps) => {
         <Link className="hidden mx-auto w-fit" href="/" role="logo">
           <img src="/images/logo-large.svg" alt="Finance" />
         </Link>
-        <ul className="flex justify-between">
+        <ul className="flex justify-between mt-2">
           {navItems.map((item) => (
             <li key={item.id}>
               <NavLink
                 className={({ isActive }: { isActive: boolean }) =>
-                  `block h-full  p-4 hover:bg-grey-400 ${isActive ? "bg-grey-100 "+CURRENT.filter : ''}`
+                  `block h-full rounded-t-[4px] border-b-5 border-transparent p-4 hover:bg-grey-400 ${isActive ? "bg-grey-100 border-green-200"+CURRENT.filter : ''}`
                 }
                 to={item.href}
               >
