@@ -19,8 +19,8 @@ const LinkNavIcon = ({
 }: LinkNavIconProps) => {
   return (
     <LinkNav href={href} {...props}>
-      <Icon>{icon}</Icon>
-      <SpanText>{children}</SpanText>
+      <Icon className="icon">{icon}</Icon>
+      <SpanText className="text">{children}</SpanText>
     </LinkNav>
   );
 };
