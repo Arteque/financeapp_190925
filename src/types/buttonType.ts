@@ -1,4 +1,4 @@
-interface ButtonProps extends React.Attributes<HTMLButtonElement> {
+interface ButtonProps extends React.Props<HTMLButtonElement> {
   className?: string;
   children: React.ReactNode | string;
 }

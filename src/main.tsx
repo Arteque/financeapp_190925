@@ -11,12 +11,17 @@ import Budgets from "./components/pages/dashboard/Budgets";
 import Pots from "./components/pages/dashboard/Pots";
 import RecurringBills from "./components/pages/dashboard/RecurringBills";
 import Index from "./components/pages/dashboard/Index";
+import ErrorBoundary from "./Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <h1>Oops! Something went wrong.</h1>,
+    errorElement: (
+      <ErrorBoundary>
+        <div />
+      </ErrorBoundary>
+    ),
     children: [
       {
         path: "/",
