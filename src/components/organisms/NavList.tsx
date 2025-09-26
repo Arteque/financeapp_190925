@@ -12,12 +12,12 @@ const NavList = ({ ...props }) => {
     <nav {...props}>
       <ul className="flex items-center justify-between pt-2">
         {routes.map((route) => (
-          <li key={route.id}>
-            <LinkNavIcon
+          <li key={route.id} className="flex-1">
+            <LinkNavIcon 
               href={route.path}
               src={route.icon}
               icon={<img src={route.icon} alt={route.alt} />}
-              className={`[&_.text]:hidden p-4 block rounded-t-[4px] flex-1 ${isActive(route.path) ? CURRENTSTYLING.link : ""}`}
+              className={`block w-full [&_.text]:hidden p-4 rounded-t-[4px] ${isActive(route.path) ? CURRENTSTYLING.link : ""}`}
             >
               {route.name}
             </LinkNavIcon>

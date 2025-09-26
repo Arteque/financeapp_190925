@@ -19,7 +19,7 @@ const LinkNavIcon = ({
 }: LinkNavIconProps) => {
   return (
     <LinkNav href={href} {...props}>
-      <Icon className="icon">{icon}</Icon>
+      <Icon className="icon mx-auto w-fit block">{icon}</Icon>
       <SpanText className="text">{children}</SpanText>
     </LinkNav>
   );

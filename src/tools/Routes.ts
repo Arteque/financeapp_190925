@@ -31,7 +31,7 @@ export const MyRoutes: RouteItem[] = [
   },
   {
     id: 5,
-    path: "/recurringbills",
+    path: "/recurring-bills",
     name: "Recurring Bills",
     icon: "/images/icon-nav-recurring-bills.svg",
     alt: "Recurring Bills Icon",

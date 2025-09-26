@@ -14,7 +14,7 @@ const CURRENT = {
 
 const Header = ({ loged }: HeaderProps) => {
   return loged ? (
-    <header className="bg-grey-500 text-grey-100 fixed bottom-0 left-0 right-0">
+    <header className="bg-grey-500 text-grey-100 fixed bottom-0 left-0 right-0 px-[1rem] pt-[0.5rem]">
       <NavList className={CURRENT.filter} />
     </header>
   ) : (
