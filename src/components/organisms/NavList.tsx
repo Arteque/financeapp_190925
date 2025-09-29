@@ -2,7 +2,7 @@ import { useRoutes } from "../../hooks/useRoutes";
 import LinkNavIcon from "../molecules/LinkNavIcon";
 
 const CURRENTSTYLING = {
-  link: "border-b-4 border-green-100 bg-grey-100 [&_.icon]bg-green-100"
+  link: "border-green-100 bg-grey-100 [&_.icon]bg-green-100"
 }
 
 const NavList = ({ ...props }) => {
@@ -10,14 +10,14 @@ const NavList = ({ ...props }) => {
 
   return (
     <nav {...props}>
-      <ul className="flex items-center justify-between pt-2">
+      <ul className="flex items-end justify-between pt-2">
         {routes.map((route) => (
           <li key={route.id} className="flex-1">
             <LinkNavIcon 
               href={route.path}
               src={route.icon}
               icon={<img src={route.icon} alt={route.alt} />}
-              className={`block w-full [&_.text]:hidden p-4 rounded-t-[4px] ${isActive(route.path) ? CURRENTSTYLING.link : ""}`}
+              className={`block border-b-4 w-full [&_.text]:hidden p-4 rounded-t-[4px] ${isActive(route.path) ? CURRENTSTYLING.link : ""}`}
             >
               {route.name}
             </LinkNavIcon>
