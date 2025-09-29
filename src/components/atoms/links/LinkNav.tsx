@@ -9,7 +9,7 @@ const LinkNav = ({
   ...props
 }: LinkProps) => {
   return (
-    <NavLink to={href} className={`${className || ""}`} {...props}>
+    <NavLink to={href} className={`${className || ""} ${isActive}`} {...props}>
       {children}
     </NavLink>
   );

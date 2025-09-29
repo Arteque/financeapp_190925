@@ -1,6 +1,11 @@
 import type { ButtonProps } from "../../../types/buttonType";
+import type { LinkProps } from "../../../types/linkType";
 
 interface ButtonVariant extends ButtonProps {
+  variant?: ButtonVariantKey;
+}
+
+interface LinkPropsExtended extends LinkProps {
   variant?: ButtonVariantKey;
 }
 
@@ -18,20 +23,7 @@ const ButtonVariantStyling = {
 
 type ButtonVariantKey = keyof typeof ButtonVariantStyling;
 
-const Button = ({ className, children, variant, ...props }: ButtonVariant) => {
-  return (
-    <button
-      className={`${ButtonVariantStyling.default} ${
-        variant ? ButtonVariantStyling[variant] : ""
-      }  ${className || ""}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+export default ButtonVariantStyling
 
-export default Button;
-export { ButtonVariantStyling };
-export type { ButtonVariantKey };
-export type { ButtonVariant };
+
+export type {ButtonVariantKey, ButtonVariant, LinkPropsExtended}

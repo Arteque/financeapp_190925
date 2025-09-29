@@ -1,11 +1,7 @@
 import { Link as Lk } from "react-router-dom";
-import type { LinkProps } from "../../../types/linkType";
-import type { ButtonVariantKey } from "../Buttons/Button";
-import { ButtonVariantStyling } from "../Buttons/Button";
+import ButtonVariantStyling from "./Variants";
+import type { LinkPropsExtended } from "./Variants";
 
-interface LinkPropsExtended extends LinkProps {
-  variant?: ButtonVariantKey;
-}
 
 const Link = ({
   href,

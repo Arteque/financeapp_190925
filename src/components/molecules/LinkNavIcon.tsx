@@ -5,13 +5,11 @@ import SpanText from "../atoms/text/SpanText";
 
 interface LinkNavIconProps extends LinkProps {
   icon: React.ReactNode | string;
-  src: string;
   children: React.ReactNode | string;
   href: string;
 }
 
 const LinkNavIcon = ({
-  src,
   href,
   children,
   icon,

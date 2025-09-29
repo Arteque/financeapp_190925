@@ -1,4 +1,4 @@
-import Button from "../atoms/Buttons/Button";
+import Button from "../atoms/links/Button";
 import Icon from "../atoms/Icons/Icon";
 
 import { FaCaretRight } from "react-icons/fa";
