@@ -17,7 +17,8 @@ const NavList = ({ ...props }) => {
               href={route.path}
               src={route.icon}
               icon={<img src={route.icon} alt={route.alt} />}
-              className={`block border-b-4 w-full [&_.text]:hidden p-4 rounded-t-[4px] ${isActive(route.path) ? CURRENTSTYLING.link : ""}`}
+              className={`block border-b-4 w-full [&_.text]:hidden p-4 rounded-t-[4px]`} 
+              style={{borderBlockEnd:`${isActive(route.path)? "var(--green-100)":"transparent"}`}}
             >
               {route.name}
             </LinkNavIcon>
