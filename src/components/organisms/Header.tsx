@@ -1,5 +1,5 @@
 import Link from "../atoms/links/Link";
-import NavList from "./NavList";
+import NavList from "./NavList/NavList";
 
 type HeaderProps = {
   loged: boolean;

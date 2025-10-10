@@ -1,6 +1,6 @@
-import { useRoutes } from "../../hooks/useRoutes";
-import LinkNavIcon from "../molecules/LinkNavIcon";
-import { cn } from "../../tools/cn";
+import { useRoutes } from "../../../hooks/useRoutes";
+import LinkNavIcon from "../../molecules/LinkNavIcon";
+import { cn } from "../../../tools/cn";
 
 
 const NavList = ({ ...props }) => {
@@ -19,7 +19,7 @@ const NavList = ({ ...props }) => {
               className={cn(
                 "block w-full p-4 roundend-t-[4px]",
                 "border-b-4 [&_.text]:hidden md:[&_.text]:block md:[&_.text]:mt-2 md:text-center",
-                `[&_img]:opacity-0`,
+                `[&_img]:opacity-0 [&_img]:[mask-image:url(${route.icon})]`,
                 isRouteActive 
                 ? "border-green-100"
                 : "border-transparent"
