@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./template/Root";
 
 
 
@@ -9,7 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div><h1>Test</h1></div>
+    element: <Root />
 }
 ]);
 
