@@ -1,0 +1,24 @@
+:root {
+  --grey-100: #fff;
+  --grey-200: #f2f2f2;
+  --grey-300: #b3b3b3;
+  --grey-400: #696868;
+  --grey-500: #201f24;
+  --beige-100: #f8f4f0;
+  --beige-200: #98908b;
+  --green-100: #277c78;
+  --green-200: #597c7c;
+  --green-300: #7f9161;
+  --yellow-100: #f2cdac;
+  --yellow-200: #cab361;
+  --blue-100: #3f82b2;
+  --blue-200: #82c9d7;
+  --blue-300: #97a0ac;
+  --blue-400: #626070;
+  --red-100: #c94736;
+  --red-200: #be6c49;
+  --purple-100: #826cb0;
+  --purple-200: #af81ba;
+  --transition-duration: 300ms;
+  --font: "Public Sans", sans-serif;
+}/*# sourceMappingURL=vars.css.map */
