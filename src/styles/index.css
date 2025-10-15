@@ -91,3 +91,8 @@ button {
   @apply gap-[0.25rem];
 }
 /* #################################################### Spacing End */
+/* #################################################### Components Formelements Start */
+.input {
+  @apply py-[.75rem] px-[1.25rem] border-2 border-grey-400 rounded-[.5rem] block;
+}
+/* #################################################### Components Formelements end */
