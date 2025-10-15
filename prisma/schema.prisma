@@ -15,33 +15,131 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique @db.VarChar(255)
-  passwordHash String @db.VarChar(255)
-  name String @db.VarChar(255)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  accounts Account[]
+  id           Int           @id @default(autoincrement())
+  email        String        @unique @db.VarChar(255)
+  passwordHash String        @db.VarChar(255)
+  name         String        @db.VarChar(255)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  accounts     Account[]
   transactions Transaction[]
-  budgets Budget[]
-  categories Category[]
+  budgets      Budget[]
+  categories   Category[]
+  pots         Pot[]
 
   @@map("users")
 }
 
-model Account{
-  id Int @id @default(autoincrement())
-  userId Int
-  name String @db.VarChar(255)
-  type AccountType
-  balance Decimal @db.Decimal(15, 2)
-  currency String @default("EUR") @db.VarChar(3)
-  color String @default("#277c78") @db.VarChar(7)
-  isActive Boolean @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  user User @relation(fields:[userId], references:[id], onDelete: Cascade)
+model Account {
+  id           Int           @id @default(autoincrement())
+  userId       Int
+  name         String        @db.VarChar(255)
+  type         AccountType
+  balance      Decimal       @db.Decimal(15, 2)
+  currency     String        @default("EUR") @db.VarChar(3)
+  color        String        @default("#277c78") @db.VarChar(7)
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   transactions Transaction[]
 
-  @@unique([userId, name], name:"userId_name")
+  @@unique([userId, name], name: "userId_name")
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Category {
+  id           Int             @id @default(autoincrement())
+  userId       Int
+  name         String          @db.VarChar(255)
+  color        String          @default("#82C9D7")
+  icon         String          @default("shopping") @db.VarChar(50)
+  type         TransactionType
+  createdAt    DateTime        @default(now())
+  user         User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions Transaction[]
+  budgets      Budget[]
+
+  @@unique([userId, name], name: "userId_name")
+  @@index([userId, type])
+  @@map("categories")
+}
+
+model Transaction {
+  id          Int             @id @default(autoincrement())
+  userId      Int
+  accountId   Int
+  categoryId  Int?
+  amount      Decimal         @db.Decimal(15, 2)
+  description String?         @db.Text
+  date        DateTime
+  type        TransactionType
+  recurring   Boolean         @default(false)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  account     Account         @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  category    Category?       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+  @@index([accountId])
+  @@index([categoryId])
+  @@map("transactions")
+}
+
+model Budget {
+  id         Int         @id @default(autoincrement())
+  userId     Int
+  categoryId Int
+  name       String      @db.VarChar(255)
+  limit      Decimal     @db.Decimal(15, 2)
+  spent      Decimal     @db.Decimal(15, 2) @default(0.00)
+  period     BudgetPeriod
+  startDate  DateTime
+  endDate    DateTime
+  isActive   Boolean     @default(true)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category   Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([categoryId])
+  @@map("budgets")
+}
+
+model Pot {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  name      String   @db.VarChar(255)
+  target    Decimal  @db.Decimal(15, 2)
+  total     Decimal  @db.Decimal(15, 2) @default(0.00)
+  color     String   @default("#277C78") @db.VarChar(7)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, name], name: "userId_name")
+  @@index([userId])
+  @@map("pots")
+}
+
+enum AccountType {
+  CHECKING
+  SAVINGS  
+  CREDIT
+  INVESTMENT
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
+
+enum BudgetPeriod {
+  WEEKLY
+  MONTHLY
+  YEARLY
 }
