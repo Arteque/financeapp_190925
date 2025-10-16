@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
-import Root from "./template/Root"
+import Root from "./components/templates/Root"
 import ProtectedRoute from "./components/pages/ProtectedRoute"
 import NotFound from "./components/pages/NotFound/NotFound"
 import Login from "./components/pages/Login/Login"

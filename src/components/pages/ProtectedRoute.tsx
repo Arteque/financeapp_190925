@@ -4,7 +4,7 @@ import Dashboard from "../templates/Dashboard/Dashboard";
 
 const ProtectedRoute = () => {
 
-  const [loggedin, setLoggedin] = useState<boolean>(false)
+  const [loggedin, setLoggedin] = useState<boolean>(true)
 
   
 
