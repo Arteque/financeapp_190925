@@ -19,6 +19,7 @@ model User {
   email        String        @unique @db.VarChar(255)
   passwordHash String        @db.VarChar(255)
   name         String        @db.VarChar(255)
+  isDemo       Boolean       @default(false)
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   accounts     Account[]
@@ -26,6 +27,7 @@ model User {
   budgets      Budget[]
   categories   Category[]
   pots         Pot[]
+  balanceSummary BalanceSummary?
 
   @@map("users")
 }
@@ -73,6 +75,7 @@ model Transaction {
   categoryId  Int?
   amount      Decimal         @db.Decimal(15, 2)
   description String?         @db.Text
+  avatar String? @db.VarChar(500)
   date        DateTime
   type        TransactionType
   recurring   Boolean         @default(false)
@@ -89,20 +92,20 @@ model Transaction {
 }
 
 model Budget {
-  id         Int         @id @default(autoincrement())
+  id         Int          @id @default(autoincrement())
   userId     Int
   categoryId Int
-  name       String      @db.VarChar(255)
-  limit      Decimal     @db.Decimal(15, 2)
-  spent      Decimal     @db.Decimal(15, 2) @default(0.00)
+  name       String       @db.VarChar(255)
+  limit      Decimal      @db.Decimal(15, 2)
+  spent      Decimal      @default(0.00) @db.Decimal(15, 2)
   period     BudgetPeriod
   startDate  DateTime
   endDate    DateTime
-  isActive   Boolean     @default(true)
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
-  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  category   Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isActive   Boolean      @default(true)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category   Category     @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([categoryId])
@@ -114,21 +117,36 @@ model Pot {
   userId    Int
   name      String   @db.VarChar(255)
   target    Decimal  @db.Decimal(15, 2)
-  total     Decimal  @db.Decimal(15, 2) @default(0.00)
+  total     Decimal  @default(0.00) @db.Decimal(15, 2)
   color     String   @default("#277C78") @db.VarChar(7)
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, name], name: "userId_name")
   @@index([userId])
   @@map("pots")
 }
 
+model BalanceSummary {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @unique
+  current   Decimal  @db.Decimal(15, 2)
+  income    Decimal  @db.Decimal(15, 2)
+  expenses  Decimal  @db.Decimal(15, 2)
+  currency  String   @default("USD") @db.VarChar(3)
+  period    String   @default("monthly") @db.VarChar(20) // "monthly", "yearly", "all-time"
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("balance_summaries")
+}
+
 enum AccountType {
   CHECKING
-  SAVINGS  
+  SAVINGS
   CREDIT
   INVESTMENT
 }
