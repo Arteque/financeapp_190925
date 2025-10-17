@@ -1,8 +1,7 @@
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const Button = () => {
-  return (
-    <div>Button</div>
-  )
-}
+const Button = ({ ...props }: ButtonProps) => {
+  return <button {...props} />;
+};
 
-export default Button
+export default Button;
