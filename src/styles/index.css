@@ -28,11 +28,10 @@
 html,
 body {
   font-family: var(--font);
+  background-color: var(--beige-100);
 }
 
-button {
-  cursor: pointer;
-}
+
 @media (prefers-reduced-motion = reduced) {
   :root {
     --duration: 0;
@@ -91,8 +90,37 @@ button {
   @apply gap-[0.25rem];
 }
 /* #################################################### Spacing End */
+/* #################################################### Components Container Start */
+/*#########Container ### */
+.container_32 {
+  @apply p-[1.5rem] md:p-[2rem]
+}
+/*#########Button ### */
+button {
+  cursor: pointer;
+}
+.btn{
+  @apply p-[1rem]
+}
+.btn_primary {
+  @apply rounded-[0.5rem];
+}
+.btn_primary--dark{
+  @apply bg-grey-500 text-grey-100; 
+}
+.btn_primary--dark:hover{
+  @apply bg-grey-400; 
+}
+.btn_primary--call{
+  @apply bg-red-100 text-grey-100; 
+}
+.btn_primary--call:hover{
+  @apply bg-red-200; 
+}
+/* #################################################### Components Container End */
+
 /* #################################################### Components Formelements Start */
 .input {
-  @apply py-[.75rem] px-[1.25rem] border-2 border-grey-400 rounded-[.5rem] block;
+  @apply py-[.75rem] px-[1.25rem] border-1 border-grey-300 rounded-[.5rem] block;
 }
 /* #################################################### Components Formelements end */

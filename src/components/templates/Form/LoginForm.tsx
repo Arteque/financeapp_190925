@@ -19,23 +19,27 @@ const LoginForm = () => {
   };
 
   return (
-    <form action="">
-      <InputText id="mail" infoText="" labelText="E-Mail" type="e-mail" />
-      <div className="password flex gap_8">
-        <InputText
-          id="password"
-          infoText={infoText}
-          labelText="Password"
-          type={passwordType}
-          hasIcon
-          icon={passwordVisibilityState ? <FaEye /> : <FaEyeSlash />}
-          clickHanlder={passwordTextVisibilityHandler} 
-          
-        />
-       
-      </div>
-      <button type="submit">Login</button>
-    </form>
+      <section className="container_32 bg-grey-100 w-fit rounded-2xl">
+      <h2 className="heading_xl">Login</h2>
+      <p className="mt-4">
+        Don't have an account? <a href="/register">Register</a>
+      </p>
+      <form action="">
+        <InputText id="mail" infoText="" labelText="E-Mail" type="e-mail" required={true} placeholder="youremail@xy.com"/>
+        <div className="password flex gap_8">
+          <InputText
+            id="password"
+            infoText={infoText}
+            labelText="Password"
+            type={passwordType}
+            hasIcon
+            icon={passwordVisibilityState ? <FaEye /> : <FaEyeSlash />}
+            clickHanlder={passwordTextVisibilityHandler} 
+          />
+        </div>
+        <button type="submit" className="btn btn_primary btn_primary--dark text_sm--bold w-full">Login</button>
+      </form>
+      </section>
   );
 };
 
