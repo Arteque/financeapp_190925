@@ -1,6 +1,7 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import InputText from "../../organisms/Form/InputText";
+import ButtonCall from "../../molecules/Buttons/ButtonCall";
 
 const LoginForm = () => {
   const infoText = "";
@@ -26,15 +27,12 @@ const LoginForm = () => {
           infoText={infoText}
           labelText="Password"
           type={passwordType}
+          hasIcon
+          icon={passwordVisibilityState ? <FaEye /> : <FaEyeSlash />}
+          clickHanlder={passwordTextVisibilityHandler} 
+          
         />
-        <button
-          type="button"
-          role="toggle"
-          onClick={passwordTextVisibilityHandler}
-          className="top-3 relative"
-        >
-          {passwordVisibilityState ? <FaEye /> : <FaEyeSlash />}
-        </button>
+       
       </div>
       <button type="submit">Login</button>
     </form>
