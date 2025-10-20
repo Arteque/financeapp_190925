@@ -1,7 +1,6 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import InputText from "../../organisms/Form/InputText";
-import ButtonCall from "../../molecules/Buttons/ButtonCall";
 
 const LoginForm = () => {
   const infoText = "";
@@ -25,12 +24,13 @@ const LoginForm = () => {
         Don't have an account? <a href="/register">Register</a>
       </p>
       <form action="">
-        <InputText id="mail" infoText="" labelText="E-Mail" type="e-mail" required={true} placeholder="youremail@xy.com"/>
+        <InputText id="mail" infoText="" labelText="E-Mail" type="email" required={true} placeholder="youremail@xy.com" className="mb-5"/>
         <div className="password flex gap_8">
           <InputText
             id="password"
             infoText={infoText}
             labelText="Password"
+            required
             type={passwordType}
             hasIcon
             icon={passwordVisibilityState ? <FaEye /> : <FaEyeSlash />}

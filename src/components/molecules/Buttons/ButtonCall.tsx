@@ -13,7 +13,7 @@ const ButtonCall = ({className, icon, text, ...props}:ButtonCallProps) => {
     <Button className={`${className || ""}`} {...props}>
         {icon && <Icon>{icon}</Icon>}
         {text && <TextSpan>{text}</TextSpan>}
-    </Button>  
+    </Button>
     )
 }
 

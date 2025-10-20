@@ -100,7 +100,10 @@ button {
   cursor: pointer;
 }
 .btn{
-  @apply p-[1rem]
+  @apply p-[1rem] transition-all duration-300 ease-in-out;
+}
+.btn--icon{
+  @apply flex gap-2 items-center;
 }
 .btn_primary {
   @apply rounded-[0.5rem];
@@ -117,6 +120,13 @@ button {
 .btn_primary--call:hover{
   @apply bg-red-200; 
 }
+.btn_primary--light{
+  @apply bg-beige-100 text-grey-500 border-2 border-transparent; 
+}
+.btn_primary--light:hover{
+  @apply bg-transparent border-2 border-grey-400; 
+}
+
 /* #################################################### Components Container End */
 
 /* #################################################### Components Formelements Start */
