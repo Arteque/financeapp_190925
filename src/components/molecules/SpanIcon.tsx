@@ -7,7 +7,7 @@ interface SpanIconProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 const SpanIcon = ({ children, className, ...props }: SpanIconProps) => {
   return (
-    <SpanContainer className={`p-6 ${className || ""}`} {...props}>
+    <SpanContainer className={`p-5 ${className || ""}`} {...props}>
       {children}
     </SpanContainer>
   );

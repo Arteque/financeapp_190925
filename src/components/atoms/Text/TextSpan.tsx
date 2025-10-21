@@ -1,7 +1,7 @@
 
 interface TextSpanProps extends React.HTMLProps<HTMLSpanElement>{
     className?:string;
-    children: React.ReactNode;
+    children: React.ReactNode | string;
 }
 
 const TextSpan = ({className, children, ...props}:TextSpanProps) => {

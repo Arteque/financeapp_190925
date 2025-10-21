@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 interface SpanContainerProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
 }
@@ -8,7 +9,7 @@ const SpanContainer = ({
   ...props
 }: SpanContainerProps) => {
   return (
-    <span className={`${className}`} {...props}>
+    <span className={`${twMerge(className || "")}`} {...props}>
       {children}
     </span>
   );

@@ -3,10 +3,10 @@ interface IconProps{
     children:React.ReactNode;
 }
 
-const Icon = ({className, children,...props}:IconProps) => {
+const IconSpan = ({className, children,...props}:IconProps) => {
   return (
     <span className={`${className || ""}`} {...props}>{children}</span>
   )
 }
 
-export default Icon
+export default IconSpan
