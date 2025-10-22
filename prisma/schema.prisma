@@ -15,18 +15,18 @@ datasource db {
 }
 
 model User {
-  id           Int           @id @default(autoincrement())
-  email        String        @unique @db.VarChar(255)
-  passwordHash String        @db.VarChar(255)
-  name         String        @db.VarChar(255)
-  isDemo       Boolean       @default(false)
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  accounts     Account[]
-  transactions Transaction[]
-  budgets      Budget[]
-  categories   Category[]
-  pots         Pot[]
+  id             Int             @id @default(autoincrement())
+  email          String          @unique @db.VarChar(255)
+  passwordHash   String          @db.VarChar(255)
+  name           String          @db.VarChar(255)
+  isDemo         Boolean         @default(false)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  accounts       Account[]
+  transactions   Transaction[]
+  budgets        Budget[]
+  categories     Category[]
+  pots           Pot[]
   balanceSummary BalanceSummary?
 
   @@map("users")
@@ -75,7 +75,7 @@ model Transaction {
   categoryId  Int?
   amount      Decimal         @db.Decimal(15, 2)
   description String?         @db.Text
-  avatar String? @db.VarChar(500)
+  avatar      String?         @db.VarChar(500)
   date        DateTime
   type        TransactionType
   recurring   Boolean         @default(false)
