@@ -1,13 +1,9 @@
 import { createBrowserRouter } from "react-router-dom"
-import Root from "./components/templates/Root"
-import ProtectedRoute from "./components/pages/ProtectedRoute"
-import NotFound from "./components/pages/NotFound/NotFound"
-import Login from "./components/pages/Login/Login"
-import Dashboard from "./components/templates/Dashboard/Dashboard"
-// Weitere Pages importieren
-// import Transactions from "./components/pages/Transactions/Transactions"
-// import Budgets from "./components/pages/Budgets/Budgets"
-// import Pots from "./components/pages/Pots/Pots"
+import Root from "./Root"
+import Login from "./Routes/Pages/Login/Login"
+import ProtectedRoutes from "./Routes/ProtectedRoutes"
+import Index from "./Routes/Pages/Dashboard"
+import NotFound from "./Routes/Pages/Errors/NotFound"
 
 const router = createBrowserRouter([
     {
@@ -20,29 +16,16 @@ const router = createBrowserRouter([
             },
             {
                 path: "/",
-                element: <ProtectedRoute />,
+                element: <ProtectedRoutes />,
                 children: [
                     {
-                        index: true, // Default Route für "/"
-                        element: <Dashboard />
+                        index: true, 
+                        element: <Index />
                     },
                     {
                         path: "dashboard",
-                        element: <Dashboard />
+                        element: <Index />
                     }
-                    // Weitere geschützte Routen hier hinzufügen:
-                    // {
-                    //     path: "transactions",
-                    //     element: <Transactions />
-                    // },
-                    // {
-                    //     path: "budgets",
-                    //     element: <Budgets />
-                    // },
-                    // {
-                    //     path: "pots",
-                    //     element: <Pots />
-                    // }
                 ]
             }
         ]
