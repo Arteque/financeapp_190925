@@ -1,8 +1,6 @@
-
+import Index from "../../../components/templates/Login/Index";
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  return <Index />;
+};
 
-export default Login
+export default Login;
