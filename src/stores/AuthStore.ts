@@ -41,24 +41,7 @@ export const useAuthStore = create<AuthState>()(
         }),
         {
             name:"auth-storage",
-            storage:createJSONStorage(() => localStorage),
-
-            // Nur bestimmte Felder speichern
-            partialize:(state) => ({
-                isLogged:state.isLogged,
-                user:state.user
-            }),
-
-            // Version 
-            version:1,
-
-            //Migration
-            migrate:(persistedState:any, version:number) => {
-                if(version === 0){
-                    return {...persistedState, newField: 'defaultValue'}
-                }
-                return persistedState
-            }
+            storage:createJSONStorage(() => localStorage)
         }
     )
 )
