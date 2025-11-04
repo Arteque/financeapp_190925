@@ -25,7 +25,7 @@ const Login = () => {
         <div className="flex flex-col gap-2">
             <label htmlFor="mail">E-Mail</label>
             <input type="email" placeholder="ex: yourmail@web.com" className="input w-fit" onChange={inputHandler} />
-            <span className="info">{errMsg}</span>ch
+            <span className="info">{errMsg}</span>
         </div>
         
     </form>
