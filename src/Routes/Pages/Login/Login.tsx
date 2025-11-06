@@ -6,7 +6,7 @@ const Login = () => {
     const [errMsg, setErrMsg] = useState<string | null>(null)
     const [input, setInput] = useState<string>("")
     
-    const [user, setUser ] = useState({
+    const [user, setUser ] = useState({ 
       mail:null,
       password:null
     })
