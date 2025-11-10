@@ -52,14 +52,14 @@ body {
 }
 
 .text_sm--bold {
-  @apply font-bold;
+  @apply text-[0.875rem] leading-[150%] font-bold;
 }
 
 .text_xs {
   @apply text-[0.75rem] leading-[150%] font-normal;
 }
 .text_xs--bold {
-  @apply font-bold;
+  @apply text-[0.75rem] leading-[150%] font-bold;
 }
 
 /* ###################################################Typography End*/
