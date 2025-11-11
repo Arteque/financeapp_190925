@@ -27,7 +27,7 @@ const Login = () => {
     }
 
   return (
-    <section className="mt-[10svh] rounded-[0.75rem] bg-grey-100 m-[1rem] px-[1.25rem] py-[1.5rem]" aria-labelledby="login-heading">
+    <section className="mx-auto mt-[10svh] rounded-[0.75rem] bg-grey-100 m-[1rem] px-[1.25rem] py-[1.5rem] w-[calc(100%-1rem)] max-w-[35rem] " aria-labelledby="login-heading">
       <header className="mb-[2rem]">
         <h2 className="heading_xl" id="login-heading">Login</h2>
       </header>
