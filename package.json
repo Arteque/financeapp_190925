@@ -26,6 +26,7 @@
     "date-fns": "^4.1.0",
     "decimal.js": "^10.6.0",
     "lodash-es": "^4.17.21",
+    "npm": "^11.6.0",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.1",
