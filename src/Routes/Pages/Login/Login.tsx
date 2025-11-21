@@ -1,6 +1,8 @@
 import {useState} from "react"
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import InputText from "../../../components/organisms/Form/InputText";
+import InputPassword from "../../../components/organisms/Form/InputPassword";
 
 const Login = () => {
 
@@ -33,11 +35,19 @@ const Login = () => {
       </header>
       <main>
         <form>
+          <InputText id="mail" label="E-Mail" placeholder="xy@mail.com"  />
           <div className="flex flex-col gap-2 mb-[1rem]">
               <label className="text_xs--bold text-grey-400" htmlFor={`youremail`}>E-Mail</label>
               <input type="email" placeholder="ex: yourmail@web.com" className="input w-full" onChange={inputHandler} id={`youremail`}/>
               <span className="info">{errMsg}</span>
           </div>
+          <InputPassword 
+          id="password" 
+          label="Password" 
+          placeholder="Password" 
+          type={showPassword?"password":"text"}
+
+          />
           <div className="flex flex-col gap-2">
               <label className="text_xs--bold text-grey-400" htmlFor="pass">Password</label>
               <div className="relative">

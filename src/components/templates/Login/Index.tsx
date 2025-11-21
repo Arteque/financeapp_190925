@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import InputText from "../../organisms/Form/InputText";
 
 const Index = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -14,6 +15,9 @@ const Index = () => {
     <>
       <h2 className="heading_xl">Login</h2>
       <form action="">
+          <div className="mail my-5">
+            <InputText label="E-Mail" id="mail"  />
+          </div>
         <div className="mail my-5">
           <label htmlFor="mail">E-Mail:*</label>
           <input
