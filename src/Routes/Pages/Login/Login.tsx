@@ -14,19 +14,6 @@ const Login = () => {
       password:null
     })
 
-    const inputHandler = (e:React.FormEvent<HTMLInputElement>)=> {
-      
-      const inputValue = (e.target as HTMLInputElement).value
-      setInput(inputValue)
-    }
-
-
-    const [showPassword, setShowPassword] = useState<boolean>(true)
-
-    const showPasswordHandler = (e:React.FormEvent<HTMLButtonElement>) => {
-      e.preventDefault()
-      setShowPassword(prev => !prev)
-    }
 
   return (
     <section className="mx-auto mt-[10svh] rounded-[0.75rem] bg-grey-100 m-[1rem] px-[1.25rem] py-[1.5rem] w-[calc(100%-1rem)] max-w-[35rem] " aria-labelledby="login-heading">
@@ -35,7 +22,7 @@ const Login = () => {
       </header>
       <main>
         <form>
-          <InputText id="mail" label="E-Mail" required placeholder="xy@mail.com"  />
+          <InputText id="mail" label="E-Mail" required placeholder="xy@mail.com" />
           <InputPassword className="mt-5 block" id="pass" label="Password" placeholder="password" type="default"/>
           <button className="p-5 bg-grey-500 text-grey-100 font-bold rounded block w-full my-[2rem]" type="submit">Login</button>
       </form>

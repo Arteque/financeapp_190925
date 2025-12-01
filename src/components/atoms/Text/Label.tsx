@@ -1,13 +1,13 @@
-import {forwardRef} from "react"
 import clsx from "clsx"
+import { useRef } from "react";
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement>{
   required : boolean;
   variant: "default" | "error" | "success"
 }
 
-const Label = forwardRef<HTMLLabelElement, LabelProps>(
-  ({children, required = false, variant="default", className="",...props}, ref) => {
+const Label = ({children, required = false, variant="default", className="",...props}: LabelProps) => {
 
+    const ref = useRef(null)
     const baseClasses = "text_xs--bold"
     const variantClasses = {
       default: "text-grey-400",
@@ -24,7 +24,5 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(
     </label>
   )
 }
-)
 
-Label.displayName = "Label"
 export default Label

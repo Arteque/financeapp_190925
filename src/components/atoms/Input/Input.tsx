@@ -1,5 +1,5 @@
-import { forwardRef } from "react"
-import clsx from "clsx"
+import clsx from "clsx";
+import { useRef } from "react";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
   variant:"default" | "error" | "success";
@@ -7,8 +7,8 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
 }
 
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({variant = "default", error="false", className="",type="text",...props}, ref) => {
-  
+const Input = ({ variant = "default", error = false, className = "", type = "text", ...props }: InputProps) => {
+  const ref = useRef<HTMLInputElement>(null);
   
   const baseClasses = "input w-full"
   const variantClasses = {
@@ -20,9 +20,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({variant = "default", er
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`.trim()
 
   
-  return (
-    <input type={type} className={clsx(classes)} ref={ref} {...props} aria-invalid={error?"true":"false"} />
-  )
-})
-Input.displayName = "Input"
+  return <input type={type} className={clsx(classes)} ref={ref} {...props} aria-invalid={error?"true":"false"} />
+  
+}
+
 export default Input

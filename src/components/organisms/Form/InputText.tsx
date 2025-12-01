@@ -1,13 +1,14 @@
 import FormField from "../../molecules/FormField/FormField"
 
-const InputText = ({id, label, placeholder,required=false,  ...props}:{
+const InputText = ({id, label, placeholder,required=false, error, ...props}:{
     id:string;
     label:string;
     placeholder?:string;
     required: boolean;
+    error?:string | null;
 }) => {
   return (
-    <FormField id={id} label={label} placeholder={placeholder} type="text" {...props} required={required}/>
+    <FormField id={id} label={label} placeholder={placeholder} type="text" {...props} required={required} error={error}/>
   )
 }
 
