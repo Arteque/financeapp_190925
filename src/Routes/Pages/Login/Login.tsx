@@ -1,18 +1,8 @@
-import {useState} from "react"
 
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import InputText from "../../../components/organisms/Form/InputText";
 import InputPassword from "../../../components/organisms/Form/InputPassword";
 
 const Login = () => {
-
-    const [errMsg, setErrMsg] = useState<string | null>(null)
-    const [input, setInput] = useState<string>("")
-    
-    const [user, setUser ] = useState({ 
-      mail:null,
-      password:null
-    })
 
 
   return (
