@@ -35,33 +35,8 @@ const Login = () => {
       </header>
       <main>
         <form>
-          <InputText id="mail" label="E-Mail" placeholder="xy@mail.com"  />
-          <div className="flex flex-col gap-2 mb-[1rem]">
-              <label className="text_xs--bold text-grey-400" htmlFor={`youremail`}>E-Mail</label>
-              <input type="email" placeholder="ex: yourmail@web.com" className="input w-full" onChange={inputHandler} id={`youremail`}/>
-              <span className="info">{errMsg}</span>
-          </div>
-          <InputPassword 
-          id="password" 
-          label="Password" 
-          placeholder="Password" 
-          type={showPassword?"password":"text"}
-
-          />
-          <div className="flex flex-col gap-2">
-              <label className="text_xs--bold text-grey-400" htmlFor="pass">Password</label>
-              <div className="relative">
-                <input type={showPassword?"password":"text"} required placeholder="Password" className="input w-full" onChange={inputHandler} id="pass" />
-                <button className="absolute top-0 bottom-0 px-4 right-0 " type="button" onClick={showPasswordHandler}>
-                  {showPassword ? (
-                      <FaEye />
-                    ) : (
-                      <FaEyeSlash />
-                    )} 
-                </button>
-              </div>
-              <span className="info">{errMsg}</span>
-          </div>
+          <InputText id="mail" label="E-Mail" required placeholder="xy@mail.com"  />
+          <InputPassword className="mt-5 block" id="pass" label="Password" placeholder="password" type="default"/>
           <button className="p-5 bg-grey-500 text-grey-100 font-bold rounded block w-full my-[2rem]" type="submit">Login</button>
       </form>
       </main>

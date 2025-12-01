@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Input from "../../atoms/Input";
 import { Label } from "../../atoms/Text";
 
-const InputPassword = ({id, label, placeholder, type, ...props}:{id:string;label:string;placeholder:string;type:string;}) => {
+const InputPassword = ({id, label, placeholder, type, className, ...props}:{id:string;label:string;placeholder:string;type:string; className?:string;}) => {
 
     const inputHandler = () => {
 
@@ -17,7 +17,7 @@ const InputPassword = ({id, label, placeholder, type, ...props}:{id:string;label
 
     return (
     <> 
-    <Label variant="default" htmlFor="pass" required>Password</Label>   
+    <Label variant="default" htmlFor="pass" required className={`text-grey-400  ${className}`}>Password</Label>   
     <div className="relative">
         <Input variant="default" type={showPassword?"password":"text"} required placeholder="Password" className="input w-full" onChange={inputHandler} id="pass" /> 
         <button className="absolute top-0 bottom-0 px-4 right-0 " type="button" onClick={showPasswordHandler}>
