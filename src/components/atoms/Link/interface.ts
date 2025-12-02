@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
 
 export interface BaseLinkProps{
-    variant?:"primary" | "secondary";
+    variant?:"primary" | "secondary" | "tertiary" | "destroy";
     children?: ReactNode;
 }
 

@@ -1,5 +1,5 @@
-import Input, { type InputProps } from "../../atoms/Input/";
-import { Label } from "../../atoms/Text";
+import Input, { type InputProps } from "../../../atoms/Input";
+import { Label } from "../../../atoms/Text";
 
 interface FormFieldProps extends Omit<InputProps, 'id' | 'aria-describedby' | 'variant' | 'error'>{
   id: string;

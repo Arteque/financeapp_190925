@@ -1,9 +1,15 @@
 
 import InputText from "../../../components/organisms/Form/InputText";
 import InputPassword from "../../../components/organisms/Form/InputPassword";
+import ButtonElement from "../../../components/molecules/Forms/FormField/ButtonElement";
 
 const Login = () => {
 
+
+  const formSubmitHandler = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log(e)
+  }
 
   return (
     <section className="mx-auto mt-[10svh] rounded-[0.75rem] bg-grey-100 m-[1rem] px-[1.25rem] py-[1.5rem] w-[calc(100%-1rem)] max-w-[35rem] " aria-labelledby="login-heading">
@@ -11,11 +17,7 @@ const Login = () => {
         <h2 className="heading_xl" id="login-heading">Login</h2>
       </header>
       <main>
-        <form>
-          <InputText id="mail" label="E-Mail" required placeholder="xy@mail.com" />
-          <InputPassword className="mt-5 block" id="pass" label="Password" placeholder="password" type="default"/>
-          <button className="p-5 bg-grey-500 text-grey-100 font-bold rounded block w-full my-[2rem]" type="submit">Login</button>
-      </form>
+        <Login />
       </main>
       <footer>
         <p className="text-center"><span className="text-grey-400 text_sm">Need to create an account? </span> 

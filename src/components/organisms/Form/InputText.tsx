@@ -1,4 +1,4 @@
-import FormField from "../../molecules/FormField/FormField"
+import FormField from "../../molecules/Forms/FormField/FormField"
 
 const InputText = ({id, label, placeholder,required=false, error, ...props}:{
     id:string;

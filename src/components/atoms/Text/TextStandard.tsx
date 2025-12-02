@@ -1,12 +1,14 @@
+import clsx from "clsx"
 
-interface TextStandardProps extends React.ReactElement<HTMLSpanElement>{
+
+export interface TextStandardProps extends React.ReactHTMLElement<HTMLSpanElement>{
     className?:string;
     children:React.ReactNode | string;
 }
 
-const TextStandard = ({className, children, ...props}:TextStandardProps) => {
+const TextStandard = ({className='', children, ...props}:TextStandardProps) => {
   return (
-    <span className={className || ''} {...props}>{children || "Add text to this span"}</span>
+    <span className={clsx(className)} {...props}>{children}</span>
   )
 }
 
