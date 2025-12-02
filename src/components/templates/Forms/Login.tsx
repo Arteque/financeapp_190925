@@ -1,9 +1,19 @@
-import LoginForm from "../../organisms/Form/LoginForm"
+import Heading from "../../atoms/Text/Heading/Heading";
+import LoginForm from "../../organisms/Form/LoginForm";
 
-const Login = () => {
+const TheLoginForm = () => {
   return (
-    <LoginForm />
-  )
-}
+    <>
+      <header>
+        <Heading as="h2" variant="heading_xl">
+          Login
+        </Heading>
+      </header>
+      <main>
+        <LoginForm />
+      </main>
+    </>
+  );
+};
 
-export default Login
+export default TheLoginForm;
