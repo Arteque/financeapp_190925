@@ -134,3 +134,8 @@ button {
   @apply py-[.75rem] px-[1.25rem] border-1 border-grey-300 rounded-[.5rem] block;
 }
 /* #################################################### Components Formelements end */
+/* #################################################### Utilities Start */
+.box{
+  @apply rounded-xl px-5 py-6 w-[calc(100%-1rem)];
+}
+/* #################################################### Utilities End */

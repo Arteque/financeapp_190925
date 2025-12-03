@@ -3,6 +3,7 @@ import Root from "./Root"
 import Login from "./Routes/Pages/Login/Login"
 import ProtectedRoutes from "./Routes/ProtectedRoutes"
 import Index from "./Routes/Pages/Dashboard"
+import Signup from "./Routes/Pages/Sign/Signup"
 import NotFound from "./Routes/Pages/Errors/NotFound"
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
+            },
+            {
+                path:"signup",
+                element:<Signup />
             },
             {
                 path: "/",

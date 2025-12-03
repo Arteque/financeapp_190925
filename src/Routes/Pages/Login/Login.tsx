@@ -1,9 +1,10 @@
+import clsx from "clsx";
 import TheLoginForm from "../../../components/templates/Forms/Login";
 
 const Login = () => {
   return (
     <section
-      className="mx-auto mt-[10svh] rounded-[0.75rem] bg-grey-100 m-[1rem] px-[1.25rem] py-[1.5rem] w-[calc(100%-1rem)] max-w-[35rem] "
+      className={clsx("mx-auto mt-[10svh] bg-grey-100 m-4 max-w-140 box")}
       aria-labelledby="login-heading"
     >
       <TheLoginForm />

@@ -4,7 +4,7 @@ import LoginForm from "../../organisms/Form/LoginForm";
 const TheLoginForm = () => {
   return (
     <>
-      <header>
+      <header className="mb-5">
         <Heading as="h2" variant="heading_xl">
           Login
         </Heading>
