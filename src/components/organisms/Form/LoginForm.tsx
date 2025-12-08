@@ -6,7 +6,7 @@ import InputText from "./InputText"
 const LoginForm = () => {
   return (
     <FormElement>
-        <InputText id="mail" label="E-Mail" required placeholder="E-Mail" />
+        <InputText autoComplete="Name" id="mail" label="E-Mail" required={true} placeholder="E-Mail" />
         <InputPassword id="pass" label="Password" placeholder="Password" type="password" className="mt-5 block" />
         <ButtonElement type="submit" variant="primary">Login</ButtonElement>
     </FormElement>

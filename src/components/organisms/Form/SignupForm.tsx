@@ -6,12 +6,10 @@ import InputText from './InputText'
 const SignupForm = () => {
   return (
     <FormElement >
-        <InputText id="Name" label='First-Name' placeholder='Your firstname' required className="mb-5" />
-        <InputText id="Name" label='Last-Name' placeholder='Your lasttname' required className='mb-5'/>
-        <InputText id="mail" label='E-Mail' placeholder='Your E-Mail' required className="mb-5" />
-        <InputPassword id='pass' label='Password' placeholder='Password' type='password' />
-        <InputPassword id='pass' label='Password' placeholder='Password' type='password' className='block mt-5' />
-        <Button type='submit' children="Signup" variant='primary' />
+        <InputText id="Name" label='Name' required={true} className="mb-5" />
+        <InputText id="mail" label='E-Mail' required={true} className="mb-5" />
+        <InputPassword id='pass' label='Create Password' type='password' info='Passwords must be at least 8 characters' />
+        <Button type='submit' children="Create Account" variant='primary' />
     </FormElement>
   )
 }
