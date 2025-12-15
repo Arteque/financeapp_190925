@@ -1,7 +1,7 @@
 import Input, { type InputProps } from "../../../atoms/Input";
 import { Label } from "../../../atoms/Text";
 
-interface FormFieldProps extends Omit<InputProps, 'id' | 'aria-describedby' | 'variant' | 'error'>{
+interface FormFieldProps extends Omit<InputProps, 'variant' | 'error'>{
   id: string;
   label:string;
   required?:boolean;
@@ -9,10 +9,11 @@ interface FormFieldProps extends Omit<InputProps, 'id' | 'aria-describedby' | 'v
   helperText?:string;
   type:string;
   Icon?:React.ReactNode;
+  autoComplete?:string;
 }
 
 
-const FormField = ({id, label, required = false, error, helperText, type, Icon, ...inputProps}:FormFieldProps) => {
+const FormField = ({id, label, required = false, error, helperText, type, Icon, autoComplete, ...inputProps}:FormFieldProps) => {
   return (
     <>
     <Label variant="default" htmlFor={id} required={required}  className="text_xs--bold text-grey-400">
@@ -21,7 +22,7 @@ const FormField = ({id, label, required = false, error, helperText, type, Icon, 
     {
       type === "password" ? (
         <div className="relative">
-          <Input id={id} variant={error ? "error" : "default"} error={!!error} aria-describedby={error ? `${id}-error`: helperText? `${id}-helper`:undefined} {...inputProps} />
+          <Input autoComplete={autoComplete} id={id} variant={error ? "error" : "default"} error={!!error} aria-describedby={error ? `${id}-error`: helperText? `${id}-helper`:undefined} {...inputProps} />
     {type === "password" && (
       Icon
     )}

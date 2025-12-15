@@ -4,7 +4,7 @@ import SignupForm from "../../organisms/Form/SignupForm"
 const TheSignup = () => {
   return (
     <>
-        <Heading variant="heading_lg" children="Login" className="mb-5" />
+        <Heading variant="heading_lg" children="SignUp" className="mb-5" />
         <SignupForm />
     </>
   )
