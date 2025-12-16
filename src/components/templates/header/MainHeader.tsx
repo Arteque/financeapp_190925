@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Heading from "../../atoms/Text/Heading/Heading";
 const MainHeader = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   return (
-    <header className="bg-grey-500 rounded-b-lg lg:relative lg:rounded-lg overflow-hidden">
+    <header
+      className="p-10 bg-grey-500 rounded-b-lg lg:relative lg:rounded-lg overflow-hidden"
+      style={{
+        background:
+          "url(/images/illustration-authentication.svg) no-repeat top center",
+      }}
+    >
       <Link
         to="/"
         className="block w-fit mx-auto lg:mx-[unset] lg:absolute z-10 p-5"
@@ -13,11 +20,15 @@ const MainHeader = () => {
         <img src="/images/logo-large.svg" alt="PersonalFinance App Logo" />
       </Link>
       {!loggedIn && (
-        <img
-          src="/images/illustration-authentication.svg"
-          alt="Illustration showing a person running towards money bills happily"
-          className="absolute inset-0 w-full z-0"
-        />
+        <div className="relative h-fit place-content-end">
+          <Heading variant="heading_lg" className="text-white">
+            Keep track of your money and save for your future
+          </Heading>
+          <p className="text-white">
+            Personal finance app puts you in control of your spending. Track
+            transactions, set budgets, and add to savings pots easily.
+          </p>
+        </div>
       )}
     </header>
   );
