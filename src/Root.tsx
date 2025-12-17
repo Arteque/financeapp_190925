@@ -4,7 +4,7 @@ import MainHeader from "./components/templates/header/MainHeader";
 const Root = () => {
   return (
     <>
-      <div className="lg:min-h-screen lg:grid lg:grid-cols-2 lg:m-5">
+      <div className="lg:grid lg:grid-cols-2 lg:m-5 w-full">
         <MainHeader />
         <main>
           <Outlet />
