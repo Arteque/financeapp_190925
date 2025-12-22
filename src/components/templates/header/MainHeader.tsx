@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+    
 const MainHeader = () => {
   return (
     <header className="bg-grey-500">
@@ -11,6 +11,8 @@ const MainHeader = () => {
       >
       <img src="/images/logo-large.svg" alt="PersonalFinance App Logo" />
       </Link>
+
+      
     </header>
   );
 };
