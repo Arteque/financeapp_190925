@@ -4,8 +4,12 @@ import MainHeader from "./components/templates/header/MainHeader";
 const Root = () => {
   return (
     <>
-      <MainHeader />
-      <Outlet />
+      <div className="lg:flex ">
+        <MainHeader />
+      <main>
+        <Outlet />
+      </main>
+      </div>
     </>
   );
 };

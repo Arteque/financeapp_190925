@@ -1,6 +1,13 @@
 @import "./assets/vars.css";
 @import "tailwindcss";
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 @theme inline {
   --color-grey-100: var(--grey-100);
   --color-grey-200: var(--grey-200);
