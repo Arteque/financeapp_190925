@@ -73,47 +73,47 @@ body {
 
 /* #################################################### Spacing Start */
 .gap_40 {
-  @apply gap-[2.5rem];
+  @apply gap-10;
 }
 .gap_32 {
-  @apply gap-[2rem];
+  @apply gap-8;
 }
 .gap_24 {
-  @apply gap-[1.5rem];
+  @apply gap-6;
 }
 .gap_20 {
-  @apply gap-[1.25rem];
+  @apply gap-5;
 }
 .gap_16 {
-  @apply gap-[1rem];
+  @apply gap-4;
 }
 .gap_12 {
-  @apply gap-[0.75rem];
+  @apply gap-3;
 }
 .gap_8 {
-  @apply gap-[0.5rem];
+  @apply gap-2;
 }
 .gap_4 {
-  @apply gap-[0.25rem];
+  @apply gap-1;
 }
 /* #################################################### Spacing End */
 /* #################################################### Components Container Start */
 /*#########Container ### */
 .container_32 {
-  @apply p-[1.5rem] md:p-[2rem]
+  @apply p-6 md:p-8
 }
 /*#########Button ### */
 button {
   cursor: pointer;
 }
 .btn{
-  @apply p-[1rem] transition-all duration-300 ease-in-out;
+  @apply p-4 transition-all duration-300 ease-in-out;
 }
 .btn--icon{
   @apply flex gap-2 items-center;
 }
 .btn_primary {
-  @apply rounded-[0.5rem];
+  @apply rounded-lg;
 }
 .btn_primary--dark{
   @apply bg-grey-500 text-grey-100; 
@@ -138,7 +138,7 @@ button {
 
 /* #################################################### Components Formelements Start */
 .input {
-  @apply py-[.75rem] px-[1.25rem] border-1 border-grey-300 rounded-[.5rem] block;
+  @apply py-3 px-5 border border-grey-300 rounded-lg block;
 }
 /* #################################################### Components Formelements end */
 /* #################################################### Utilities Start */
