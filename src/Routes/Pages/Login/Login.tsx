@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <section
-      className={clsx("mx-auto mt-[10svh] bg-grey-100 m-4 max-w-140 box")}
+      className={clsx("bg-grey-100 max-w-140 box")}
       aria-labelledby="login-heading"
     >
       <TheLoginForm />

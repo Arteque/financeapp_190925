@@ -6,9 +6,9 @@ const Root = () => {
     <>
       <div className="lg:flex ">
         <MainHeader />
-      <main>
-        <Outlet />
-      </main>
+        <main>
+          <Outlet />
+        </main>
       </div>
     </>
   );
