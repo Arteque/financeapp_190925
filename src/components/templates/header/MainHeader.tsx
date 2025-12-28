@@ -7,11 +7,9 @@ const MainHeader = () => {
   const isOpen = useNavStat((state) => state.isOpen);
 
   return (
-    <header
-      className="bg-grey-500 fixed top-0 w-full z-100 
-    lg:sticky lg:top-0 lg:bottom-0 lg:left-0 lg:max-w-[600px] lg:rounded-lg"
-    >
-      <Link
+    <header className="sticky top-0 bottom-0">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <Link
         to="/"
         className="block w-fit mx-auto lg:mx-[unset] lg:absolute z-10 p-5"
         role="link"
@@ -23,24 +21,20 @@ const MainHeader = () => {
           <img src="/images/logo-small.svg" alt="PersonalFinance App Logo" />
         )}
       </Link>
-      {!isLogged ? (
-        <figure className="hidden lg:block">
-          <img
-            src="/images/illustration-authentication.svg"
-            alt="Authentication Illustration"
-            className="w-full h-full object-contain"
-          />
-          <figcaption>
-            <h2>Keep track of your money and save for your future</h2>
-            <p>
-              Personal finance app puts you in control of your spending. Track
-              transactions, set budgets, and add to savings pots easily.
-            </p>
-          </figcaption>
-        </figure>
-      ) : (
-        <MainNav />
-      )}
+      <figure className="hidden lg:block">
+        <img
+          src="/images/illustration-authentication.svg"
+          alt="Authentication Illustration"
+        />
+        <figcaption>
+          <h2>Keep track of your money and save for your future</h2>
+          <p>
+            Personal finance app puts you in control of your spending. Track
+            transactions, set budgets, and add to savings pots easily.
+          </p>
+        </figcaption>
+      </figure>
+      </div>
     </header>
   );
 };
